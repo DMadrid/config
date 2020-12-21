@@ -2,5 +2,5 @@
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
-# refresh bash
-alias refresh=". ~/.bash_profile"
+# reload bash / zsh
+alias refresh="source ~/.bash_profile & soruce ~/.p10k.zsh & source ~/.zshrc"

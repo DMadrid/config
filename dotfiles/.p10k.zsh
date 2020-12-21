@@ -15,7 +15,7 @@
   # Zsh >= 5.1 is required.
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
-  # The list of segments shown on the left. Fill it with the most important segments.
+  # The list of segments shown on the left.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     os_icon                 # os identifier
@@ -26,10 +26,7 @@
     prompt_char             # prompt symbol
   )
 
-  # The list of segments shown on the right. Fill it with less important segments.
-  # Right prompt on the last prompt line (where you are typing your commands) gets
-  # automatically hidden when the input line reaches it. Right prompt above the
-  # last prompt line gets hidden if it would overlap with left prompt.
+  # The list of segments shown on the right.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     status                  # exit code of the last command
@@ -98,7 +95,7 @@
   typeset -g POWERLEVEL9K_MODE=nerdfont-complete
   # When set to `moderate`, some icons will have an extra space after them. This is meant to avoid
   # icon overlap when using non-monospace fonts. When set to `none`, spaces are not added.
-  typeset -g POWERLEVEL9K_ICON_PADDING=none
+  typeset -g POWERLEVEL9K_ICON_PADDING=moderate
 
   # Basic style options that define the overall look of your prompt. You probably don't want to
   # change them.
@@ -109,15 +106,6 @@
 
   # When set to true, icons appear before content on both sides of the prompt. When set
   # to false, icons go after content. If empty or not set, icons go before content in the left
-  # prompt and after content in the right prompt.
-  #
-  # You can also override it for a specific segment:
-  #
-  #   POWERLEVEL9K_STATUS_ICON_BEFORE_CONTENT=false
-  #
-  # Or for a specific segment in specific state:
-  #
-  #   POWERLEVEL9K_DIR_NOT_WRITABLE_ICON_BEFORE_CONTENT=false
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=true
 
   # Add an empty line before each prompt.
@@ -137,9 +125,7 @@
   # The right end of right prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
-  # Ruler, a.k.a. the horizontal line before each prompt. If you set it to true, you'll
-  # probably want to set POWERLEVEL9K_PROMPT_ADD_NEWLINE=false above and
-  # POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR=' ' below.
+  # Ruler, a.k.a. the horizontal line before each prompt.
   typeset -g POWERLEVEL9K_SHOW_RULER=false
   typeset -g POWERLEVEL9K_RULER_CHAR='─'        # reasonable alternative: '·'
   typeset -g POWERLEVEL9K_RULER_FOREGROUND=242
@@ -147,9 +133,7 @@
   # Filler between left and right prompt on the first prompt line. You can set it to '·' or '─'
   # to make it easier to see the alignment between left and right prompt and to separate prompt
   # from command output. It serves the same purpose as ruler (see above) without increasing
-  # the number of prompt lines. You'll probably want to set POWERLEVEL9K_SHOW_RULER=false
-  # if using this. You might also like POWERLEVEL9K_PROMPT_ADD_NEWLINE=false for more compact
-  # prompt.
+  # the number of prompt lines.
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='·'
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler.
@@ -167,8 +151,6 @@
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
   typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=
-  # Custom icon.
-  # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded.
