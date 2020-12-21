@@ -1,0 +1,1 @@
+cp ../dotfiles/.alacritty.yml ~/.alacritty.yml
