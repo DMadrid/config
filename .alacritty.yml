@@ -1,0 +1,43 @@
+working_directory: "/Users/danielmadrid/ghub"
+live_config_reload: true
+background_opacity: 1.0
+draw_bold_text_with_bright_colors: true
+window:
+  title: terminal
+  decorations: none
+  startup_mode: Maximized
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 10
+    y: 10
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    family: "MesloLGS NF"
+  bold:
+    family: "MesloLGS NF"
+    style: Bold
+  italic:
+    family: "MesloLGS NF"
+    style: Italic
+  bold_italic:
+    family: "MesloLGS NF"
+    style: Bold Italic
+  size: 11.0
+  use_thin_strokes: true
+colors:
+  primary:
+    background: '#000000'
+selection:
+  save_to_clipboard: true
+cursor:
+  style: Underline
+  blinking: Off
+  unfocused_hollow: false
+  thickness: 0.2
+mouse:
+  hide_when_typing: false
